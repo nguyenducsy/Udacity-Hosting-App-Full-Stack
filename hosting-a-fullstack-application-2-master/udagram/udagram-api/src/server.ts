@@ -8,7 +8,7 @@ import { IndexRouter } from "./controllers/v0/index.router";
 import bodyParser from "body-parser";
 import { V0_FEED_MODELS, V0_USER_MODELS } from "./controllers/v0/model.index";
 
-(async () => {
+(async () => { 
   dotenv.config();
   
   try {
@@ -25,7 +25,7 @@ import { V0_FEED_MODELS, V0_USER_MODELS } from "./controllers/v0/model.index";
   console.log("Database Connected");
 
   const app = express();
-  const port = 8080;
+  const port = process.env.PORT || 8080;
 
   app.use(bodyParser.json());
 
@@ -45,14 +45,14 @@ import { V0_FEED_MODELS, V0_USER_MODELS } from "./controllers/v0/model.index";
     "origin": '*',
   }));
 
-  app.use("/api/v0/", IndexRouter);
-
-  // Root URI call
   app.get("/", async (req, res) => {
     res.send("/api/v0/");
   });
 
-  // Start the Server
+  app.use("/api/v0/", IndexRouter);
+
+
+
   app.listen(port, () => {
     console.log(`Backend server is listening on port ${port}....`);
     console.log(`Frontent server running ${process.env.URL}`);
