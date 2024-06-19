@@ -1,5 +1,4 @@
 Udagram
-Udagram
 Description
 Dependencies
 AWS Cloud Setup
@@ -29,29 +28,29 @@ Dependencies
 - AWS Elastic Beanstalk for Backend.
 
 AWS Cloud Setup
-RDS - Database Host: mydbinstance.cfps9fdnzcsa.us-east-1.rds.amazonaws.com
+RDS - Database Host: database-2.cis7fzfi1nuk.us-east-1.rds.amazonaws.com
 RDS - Database Port: 5432
 RDS - Database Name: postgres
 
 ## Project Link
 
-Frontend: http://yttn2.s3-website-us-east-1.amazonaws.com/home
+Frontend: http://ducsy-bucket.s3-website-us-east-1.amazonaws.com/home
 
-Backend: http://udagram-yttn2.eba-zjpepdda.us-east-1.elasticbeanstalk.com/
+Backend: http://hello-world-env.eba-qtmiwf2m.us-east-1.elasticbeanstalk.com
 Environment Variables
 Setup the following variables in the .env file or in the cloud environments:
 
-- PORT                = <Port>
 - POSTGRES_HOST       = <Database_IP_Address>
-- POSTGRES_PORT       = <Database_Port>
-- POSTGRES_DB         = <Database_Name>
-- POSTGRES_USERNAME   = <postgres>
+- DB_PORT       = <Database_Port>
+- PORT                = <Port>
 - POSTGRES_PASSWORD   = <postgres>
-- URL                 = <Url>
-- JWT_SECRET          = <Any_PassPhrase>
+- POSTGRES_USERNAME   = <postgres>
+- POSTGRES_DB         = <Database_Name>
 - AWS_REGION          = <us-east-1>
 - AWS_PROFILE         = <Profile>
 - AWS_BUCKET          = <Bucket_Name>
+- URL                 = <Url>
+- JWT_SECRET          = <Any_PassPhrase>
 Pipeline
 From the root of the project:
 
